@@ -1,0 +1,54 @@
+""" .vromerc
+" 
+
+" Change key mapping in normal mode, please check Vrome Features for available key mapping
+map  j <C-f>
+map  j 10j
+
+" Remove key mapping in normal mode
+unmap <C-f>
+
+" Change key mapping in insert mode
+imap <M-h> <M-w>
+
+" Remove key mapping in insert mode
+iunmap <M-w>
+
+" Change key mapping in tab change
+imap gt <C-s>
+imap gT <C-a>
+
+" Change hotkey for go next / previous / next 10 / previous 10 matched item in autocomplete
+set autocomplete_prev=<S-Tab>
+set autocomplete_next=<Tab>
+set autocomplete_prev_10=<Up>
+set autocomplete_next_10=<Down>
+
+" Rule for next/prev page. (Should written in RegExp)
+set nextpattern+=^NextPage|››$
+set previouspattern+=^PrevPage|‹‹$
+
+" set no status line -- i.e keys don't show as you type. enabled by default
+set showstatus=0
+
+" Change external editor, default is GVim
+set editor=gvim -f
+
+" Disable autocomplete
+set noautocomplete
+
+" Change enable vrome keybinding, default is <C-Esc>
+set enable_vrome_key=<Esc>
+
+" The server port is what external server running on
+" The external server is used to support launch the external editor in insert mode.
+" Please refer "Support External Editor" https://github.com/jinzhu/vrome/wiki/Support-External-Editor for more
+set server_port=30000
+
+" overwrites the sub actions by your own set of actions
+set hint_actions={"`": "[", ",": "{"}
+
+" by default, hints use numbers. You can have both numbers AND strings (view custom JS below). Or you can use strings only as hints and overwrite the number commands
+set useletters=1
+
+" vim: set ft=vim:
